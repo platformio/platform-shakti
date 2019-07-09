@@ -1,0 +1,34 @@
+// AUTOMATICALLY GENERATED FILE. PLEASE DO NOT MODIFY IT MANUALLY
+
+// PIO Unified Debugger
+//
+// Documentation: https://docs.platformio.org/page/plus/debugging.html
+// Configuration: https://docs.platformio.org/page/projectconf/section_env_debug.html
+
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "platformio-debug",
+            "request": "launch",
+            "name": "PIO Debug",
+            "executable": "c:/Users/ROOT/.platformio/platforms/shakti/examples/shakti-sdk_gpio-keypad/.pio/build/artix7_35t/firmware.elf",
+            "toolchainBinDir": "C:/Users/ROOT/.platformio/packages/toolchain-riscv/bin",
+            "svdPath": "C:/Users/ROOT/.platformio/platforms/shakti/misc/svd/FE310.svd",
+            "preLaunchTask": {
+                "type": "PlatformIO",
+                "task": "Pre-Debug"
+            },
+            "internalConsoleOptions": "openOnSessionStart"
+        },
+        {
+            "type": "platformio-debug",
+            "request": "launch",
+            "name": "PIO Debug (skip Pre-Debug)",
+            "executable": "c:/Users/ROOT/.platformio/platforms/shakti/examples/shakti-sdk_gpio-keypad/.pio/build/artix7_35t/firmware.elf",
+            "toolchainBinDir": "C:/Users/ROOT/.platformio/packages/toolchain-riscv/bin",
+            "svdPath": "C:/Users/ROOT/.platformio/platforms/shakti/misc/svd/FE310.svd",
+            "internalConsoleOptions": "openOnSessionStart"
+        }
+    ]
+}

@@ -1,0 +1,51 @@
+{
+  "name": "shakti",
+  "title": "Shakti",
+  "description": "Shakti is an open-source initiative by the RISE group at IIT-Madras, which is not only building open source, production grade processors, but also associated components like interconnect fabrics, verification tools, storage controllers, peripheral IPs and SOC tools.",
+  "url": "https://shakti.org.in/",
+  "homepage": "http://platformio.org/platforms/shakti",
+  "license": "Apache-2.0",
+  "engines": {
+    "platformio": "<5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/platformio/platform-shakti.git"
+  },
+  "version": "0.0.0",
+  "packageRepositories": [
+    "https://dl.bintray.com/platformio/dl-packages/manifest.json",
+    "http://dl.platformio.org/packages/manifest.json"
+  ],
+  "frameworks": {
+    "shakti-sdk": {
+      "package": "framework-shakti-sdk",
+      "script": "builder/frameworks/shakti-sdk.py"
+    }
+  },
+  "packages": {
+    "toolchain-riscv": {
+      "type": "toolchain",
+      "version": "~1.80200.0"
+    },
+    "framework-shakti-sdk": {
+      "type": "framework",
+      "version": "~0.0.190709"
+    },
+    "tool-openocd-riscv": {
+      "optional": true,
+      "type": "uploader",
+      "version": "~2.1000.0"
+    },
+    "tool-jlink": {
+      "type": "uploader",
+      "optional": true,
+      "version": "^1.63208.0"
+    },
+    "tool-qemu-riscv": {
+      "type": "debugger",
+      "optional": true,
+      "version": "~1.30100.0"
+    }
+  }
+}
