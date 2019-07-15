@@ -25,79 +25,42 @@ class ShaktiPlatform(PlatformBase):
         if not result:
             return result
         if id_:
-            return self._add_default_debug_tools(result)
+            return self._add_dynamic_options(result)
         else:
             for key, value in result.items():
                 result[key] = self._add_default_debug_tools(result[key])
         return result
 
-    def _add_default_debug_tools(self, board):
+    def _add_dynamic_options(self, board):
         debug = board.manifest.get("debug", {})
-        upload_protocols = board.manifest.get("upload", {}).get(
-            "protocols", [])
+        debug_tools = ("jlink", "ftdi")
+
+        upload_protocol = board.manifest.get("upload", {}).get("protocol")
+        upload_protocols = board.manifest.get("upload", {}).get("protocols", [])
+        upload_protocols.extend(debug_tools)
+        if upload_protocol and upload_protocol not in upload_protocols:
+            upload_protocols.append(upload_protocol)
+        board.manifest['upload']['protocols'] = upload_protocols
+
         if "tools" not in debug:
             debug['tools'] = {}
 
-        tools = ("ftdi", "jlink", "qemu")
-        for link in tools:
-            if link not in upload_protocols or link in debug['tools']:
-                continue
-            if link == "jlink":
-                assert debug.get("jlink_device"), (
-                    "Missed J-Link Device ID for %s" % board.id)
-                debug['tools'][link] = {
-                    "server": {
-                        "package": "tool-jlink",
-                        "arguments": [
-                            "-singlerun",
-                            "-if", "JTAG",
-                            "-select", "USB",
-                            "-speed", "1000",
-                            "-jtagconf", "-1,-1",
-                            "-device", debug.get("jlink_device"),
-                            "-port", "2331"
-                        ],
-                        "executable": ("JLinkGDBServerCL.exe"
-                                       if system() == "Windows" else
-                                       "JLinkGDBServer")
-                    },
-                    "onboard": link in debug.get("onboard_tools", [])
-                }
+        for link in upload_protocols:
+            server_args = [
+                "-f",
+                join(
+                    self.get_package_dir("framework-shakti-sdk"), "bsp",
+                    "third_party", board.id, "%s.cfg" % link)
+            ]
 
-            elif link == "qemu":
-                machine64bit = "64" in board.get("build.mabi")
-                debug['tools'][link] = {
-                    "server": {
-                        "package": "tool-qemu-riscv",
-                        "arguments": [
-                            "-nographic",
-                            "-machine", "sifive_%s" % (
-                                "u" if machine64bit else "e"),
-                            "-d", "unimp,guest_errors",
-                            "-gdb", "tcp::1234",
-                            "-S"
-                        ],
-                        "executable": "bin/qemu-system-riscv%s" % (
-                            "64" if machine64bit else "32")
-                    },
-                    "onboard": True
-                }
-            else:
-                server_args = [
-                    "-s", "$PACKAGE_DIR/share/openocd/scripts",
-                    "-f", join(
-                        self.get_package_dir("framework-shakti-sdk"),
-                        "bsp", "third_party", board.id, "spike.cfg")
-                ]
-                debug['tools'][link] = {
-                    "server": {
-                        "package": "tool-openocd-riscv",
-                        "executable": "bin/openocd",
-                        "arguments": server_args
-                    },
-                    "onboard": link in debug.get("onboard_tools", []),
-                    "init_cmds": debug.get("init_cmds", None)
-                }
+            debug['tools'][link] = {
+                "server": {
+                    "package": "tool-openocd-riscv",
+                    "executable": "bin/openocd",
+                    "arguments": server_args
+                },
+                "onboard": link in debug.get("onboard_tools", [])
+            }
 
         board.manifest['debug'] = debug
         return board
