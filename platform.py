@@ -28,7 +28,7 @@ class ShaktiPlatform(PlatformBase):
             return self._add_dynamic_options(result)
         else:
             for key, value in result.items():
-                result[key] = self._add_default_debug_tools(result[key])
+                result[key] = self._add_dynamic_options(result[key])
         return result
 
     def _add_dynamic_options(self, board):
