@@ -1,18 +1,18 @@
 {
   "build": {
     "extra_flags": "-D ARTIX7_100T",
-    "f_cpu": "1500000000L",
+    "f_cpu": "50000000L",
     "hwids": [
       [
-        "0x0403",
-        "0x6010"
+         "0x002a",
+         "0x15ba"
       ]
     ],
     "ldscript": "link.ld",
     "mabi": "lp64",
     "march": "rv64imac",
     "mcmodel": "medany",
-    "mcu": "e51"
+    "mcu": "C-Class"
   },
   "debug": {
     "onboard_tools": [
@@ -24,8 +24,10 @@
   ],
   "name": "Arty A7-100: Artix-7 FPGA Development Board",
   "upload": {
-    "maximum_ram_size": 268435456,
-    "maximum_size": 16777216,
+    "maximum_ram_size": 134200000,
+    "maximum_size": "-",
+"flash_size": "128MB",
+    "speed" : 19200,
     "protocol": "ftdi",
     "protocols": [
       "ftdi",

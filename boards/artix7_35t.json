@@ -1,18 +1,18 @@
 {
   "build": {
     "extra_flags": "-D ARTIX7_35T",
-    "f_cpu": "320000000L",
+    "f_cpu": "50000000L",
     "hwids": [
       [
-        "0x0403",
-        "0x6010"
+        "0x002a",
+        "0x15ba"
       ]
     ],
     "ldscript": "link.ld",
     "mabi": "ilp32",
     "march": "rv32imac",
     "mcmodel": "medany",
-    "mcu": "e31"
+    "mcu": "E-Class"
   },
   "debug": {
     "onboard_tools": [
@@ -24,8 +24,9 @@
   ],
   "name": "Artix-7 35T Arty FPGA Evaluation Kit",
   "upload": {
-    "maximum_ram_size": 268435456,
-    "maximum_size": 16777216,
+    "maximun_ramsize":"-",
+    "maximum_size":  131072,
+     "speed" : 19200,
     "protocol": "ftdi",
     "protocols": [
       "ftdi",

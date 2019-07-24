@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<device schemaVersion="1.1" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_0.xsd" >
+  <vendor>Xilinx</vendor>
+  <vendorID>Xilinx</vendorID>
+  <name>Arty</name>
+  <series>35T</series>
+  <version></version>
+  <description>E-Class CPU Coreplex,  32-bit RV32IMAC core
+  </description>
+
+  <addressUnitBits>8</addressUnitBits>
+  <width>32</width>
+  <size>32</size>
+  <resetValue>0x00000000</resetValue>
+  <resetMask>0xFFFFFFFF</resetMask>
+
+<cpu>
+    <name>E-Class</name>
+    <endian>little</endian>
+</cpu>
+
+<peripherals>
+
+<peripheral>
+      <name>SHAKTI_PLIC</name>
+      <description>Platform-Level Interrupt Controller.</description>
+      <baseAddress>0x00040100</baseAddress>
+      <groupName>PLIC</groupName>
+      <size>32</size>
+      <access>read-write</access>
+</peripheral>
+     
+<peripheral>
+      <name>SHAKTI_CLINT</name>
+      <description>Core Local Interruptor.</description>
+      <baseAddress>0x02000000</baseAddress>
+      <groupName>CLINT</groupName>
+      <size>32</size>
+      <access>read-write</access>
+</peripheral>
+     
+<addressBlock>
+        <offset>0</offset>
+        <size>0x10000</size>
+        <usage>registers</usage>
+</addressBlock>
+
+<registers>
+ <register>
+          <name>MTIME_LO</name>
+          <description>Machine Timer Register Low.</description>
+          <addressOffset>0x0200BFF8</addressOffset>
+ </register>
+</registers>
+       
+<peripheral>
+      <name>SHAKTI_GPIO</name>
+      <description>General purpose input/output controller</description>
+      <baseAddress>0x00040200</baseAddress>
+      <groupName>GPIO</groupName>
+      <size>32</size>
+      <access>read-write</access>
+
+  <interrupt><name>GPIO_0_IRQ</name><value>8</value></interrupt>
+      <interrupt><name>GPIO_1_IRQ</name><value>9</value></interrupt>
+      <interrupt><name>GPIO_2_IRQ</name><value>10</value></interrupt>
+      <interrupt><name>GPIO_3_IRQ</name><value>11</value></interrupt>
+      <interrupt><name>GPIO_4_IRQ</name><value>12</value></interrupt>
+      <interrupt><name>GPIO_5_IRQ</name><value>13</value></interrupt>
+      <interrupt><name>GPIO_6_IRQ</name><value>14</value></interrupt>
+      <interrupt><name>GPIO_7_IRQ</name><value>15</value></interrupt>
+      <interrupt><name>GPIO_8_IRQ</name><value>16</value></interrupt>
+      <interrupt><name>GPIO_9_IRQ</name><value>17</value></interrupt>
+      <interrupt><name>GPIO_10_IRQ</name><value>18</value></interrupt>
+      <interrupt><name>GPIO_11_IRQ</name><value>19</value></interrupt>
+      <interrupt><name>GPIO_12_IRQ</name><value>20</value></interrupt>
+      <interrupt><name>GPIO_13_IRQ</name><value>21</value></interrupt>
+      <interrupt><name>GPIO_14_IRQ</name><value>22</value></interrupt>
+      <interrupt><name>GPIO_15_IRQ</name><value>23</value></interrupt>
+    
+     
+
+</peripheral>      
+     
+ <registers>
+  <register>
+          <name>VALUE</name>
+          <description>Pin value.</description>
+          <addressOffset>0x000</addressOffset>
+          <fields>
+            <field><name>SHAKTI_GPIO0</name><lsb>0</lsb><msb>0</msb></field>
+            <field><name>SHAKTI_GPIO1</name><lsb>1</lsb><msb>1</msb></field>
+            <field><name>SHAKTI_GPIO2</name><lsb>2</lsb><msb>2</msb></field>
+            <field><name>SHAKTI_GPIO3</name><lsb>3</lsb><msb>3</msb></field>
+            <field><name>SHAKTI_GPIO4</name><lsb>4</lsb><msb>4</msb></field>
+            <field><name>SHAKTI_GPIO5</name><lsb>5</lsb><msb>5</msb></field>
+            <field><name>SHAKTI_GPIO6</name><lsb>6</lsb><msb>6</msb></field>
+            <field><name>SHAKTI_GPIO7</name><lsb>7</lsb><msb>7</msb></field>
+            <field><name>SHAKTI_GPIO8</name><lsb>8</lsb><msb>8</msb></field>
+            <field><name>SHAKTI_GPIO9</name><lsb>9</lsb><msb>9</msb></field>
+            <field><name>SHAKTI_GPIO10</name><lsb>10</lsb><msb>10</msb></field>
+            <field><name>SHAKTI_GPIO11</name><lsb>11</lsb><msb>11</msb></field>
+            <field><name>SHAKTI_GPIO12</name><lsb>12</lsb><msb>12</msb></field>
+            <field><name>SHAKTI_GPIO13</name><lsb>13</lsb><msb>13</msb></field>
+            <field><name>SHAKTI_GPIO14</name><lsb>14</lsb><msb>14</msb></field>
+            <field><name>SHAKTI_GPIO15</name><lsb>15</lsb><msb>15</msb></field>
+          </fields>
+ </register>
+  </registers> 
+                                   
+<peripheral >
+      <name>UART0</name>
+      <description>Universal Asynchronous Receiver/Transmitter.</description>
+      <baseAddress>0x00011300</baseAddress>
+      <groupName>UART</groupName>
+      <interrupt><name>UART0_IRQ</name><value>4</value></interrupt>
+     <size>16</size>
+</peripheral> 
+
+<peripheral >
+      <name>UART1</name>
+      <description>Universal Asynchronous Receiver/Transmitter.</description>
+      <baseAddress>0x00011400</baseAddress>
+      <groupName>UART</groupName>
+      <interrupt><name>UART1_IRQ</name><value>4</value></interrupt>
+     <size>16</size>
+ </peripheral> 
+
+
+<peripheral >
+      <name>UART2</name>
+      <description>Universal Asynchronous Receiver/Transmitter.</description>
+      <baseAddress>0x00011500</baseAddress>
+      <groupName>UART</groupName>
+      <interrupt><name>UART2_IRQ</name><value>4</value></interrupt>
+     <size>16</size>
+</peripheral> 
+
+<peripheral>
+      <name>PWM0</name>
+      <description>Pulse-Width Modulation</description>
+      <baseAddress>0x00030000</baseAddress>
+      <groupName>PWM</groupName>
+      <size>32</size>
+      <access>read-write</access>
+</peripheral>
+
+<peripheral>
+      <name>PWM1</name>
+      <description>Pulse-Width Modulation</description>
+      <baseAddress>0x00030100</baseAddress>
+      <groupName>PWM</groupName>
+      <size>32</size>
+      <access>read-write</access>
+</peripheral>
+
+<peripheral>
+      <name>PWM2</name>
+      <description>Pulse-Width Modulation</description>
+      <baseAddress>0x00030200</baseAddress>
+      <groupName>PWM</groupName>
+      <size>32</size>
+      <access>read-write</access>
+</peripheral>
+
+<peripheral>
+      <name>PWM3</name>
+      <description>Pulse-Width Modulation.</description>
+      <baseAddress>0x00030300</baseAddress>
+      <groupName>PWM</groupName>
+      <size>32</size>
+      <access>read-write</access>
+</peripheral>
+
+<peripheral>
+      <name>PWM4</name>
+      <description>Pulse-Width Modulation.</description>
+      <baseAddress>0x00030400</baseAddress>
+      <groupName>PWM</groupName>
+      <size>32</size>
+      <access>read-write</access>
+</peripheral>
+
+<peripheral>
+      <name>PWM5</name>
+      <description>Pulse-Width Modulation.</description>
+      <baseAddress>0x00030500</baseAddress>
+      <groupName>PWM</groupName>
+      <size>32</size>
+      <access>read-write</access>
+</peripheral>
+
+<peripheral>
+      <name>SPI0</name>
+      <description>Serial Peripheral Interface.</description>
+      <baseAddress>0x00020000</baseAddress>
+      <groupName>SPI</groupName>
+      <size>32</size>
+      <access>read-write</access>
+</peripheral>
+
+<peripheral>
+      <name>SPI1</name>
+      <description>Serial Peripheral Interface</description>
+      <baseAddress>0x00020100</baseAddress>
+      <groupName>SPI</groupName>
+      <size>32</size>
+      <access>read-write</access>
+</peripheral>
+
+<peripheral>
+      <name>SPI2</name>
+      <description>Serial Peripheral Interface.</description>
+      <baseAddress>0x00020200</baseAddress>
+      <groupName>SPI</groupName>
+      <size>32</size>
+      <access>read-write</access>
+</peripheral>
+
+<peripheral>
+      <name>SHAKTI_I2C</name>
+      <description>Inter Integrated Circuit</description>
+      <baseAddress>0x00040000</baseAddress>
+      <groupName>I2C</groupName>
+      <size>32</size>
+      <access>read-write</access>
+</peripheral>
+
+<peripheral>
+      <name>XADC</name>
+      <description>Analog to Digital converter</description>
+      <baseAddress>0x00041000</baseAddress>
+      <groupName>ADC</groupName>
+      <size>32</size>
+      <access>read-write</access>
+</peripheral>
+
+<peripheral>
+      <name>SHAKTI_QSPI</name>
+      <description>Quad Serial Peripheral Interface</description>
+      <baseAddress>0x00000100</baseAddress>
+      <groupName>QSPI</groupName>
+      <size>32</size>
+     <access>read-write</access>
+</peripheral>
+
+<peripheral>
+      <name>SHAKTI_Debug</name>
+      <description>Debug</description>
+      <baseAddress>0x00000010</baseAddress>
+      <groupName>Debug</groupName>
+      <size>32</size>
+     <access>read-write</access>
+</peripheral>
+
+<peripheral>
+      <name>SHAKTI_Memory</name>
+      <description>Memory/DDR</description>
+      <baseAddress>0x80000000</baseAddress>
+      <groupName>Memory</groupName>
+      <size>32</size>
+     <access>read-write</access>
+</peripheral>
+  
+ </peripherals>
+</device>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
