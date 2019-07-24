@@ -17,7 +17,8 @@
   "debug": {
     "onboard_tools": [
       "ftdi"
-    ]
+    ],
+"svd_path": "arty35t.svd"
   },
   "frameworks": [
     "shakti-sdk"
