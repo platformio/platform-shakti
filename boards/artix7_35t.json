@@ -18,7 +18,7 @@
     "onboard_tools": [
       "ftdi"
     ],
-"svd_path": "arty35t.svd"
+  "svd_path": "arty35t.svd"
   },
   "frameworks": [
     "shakti-sdk"
@@ -27,7 +27,7 @@
   "upload": {
     "maximun_ramsize":"-",
     "maximum_size":  131072,
-     "speed" : 19200,
+    "speed" : 19200,
     "protocol": "ftdi",
     "protocols": [
       "ftdi",

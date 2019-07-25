@@ -18,7 +18,7 @@
     "onboard_tools": [
       "ftdi"
     ],
-"svd_path": "arty100t.svd"
+  "svd_path": "arty100t.svd"
   },
   "frameworks": [
     "shakti-sdk"
@@ -27,7 +27,7 @@
   "upload": {
     "maximum_ram_size": 134200000,
     "maximum_size": "-",
-"flash_size": "128MB",
+    "flash_size": "128MB",
     "speed" : 19200,
     "protocol": "ftdi",
     "protocols": [
