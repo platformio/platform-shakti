@@ -14,20 +14,27 @@
     "mcmodel": "medany",
     "mcu": "C-Class"
   },
-  "debug": {
-    "onboard_tools": [
-      "ftdi"
-    ],
-  "svd_path": "arty100t.svd"
+   "debug": {
+    "tools": {
+      "shaktidbg": {
+        "server": {
+          "arguments": [
+            "-f", "/home/john/.platformio/packages/framework-shakti-sdk/bsp/third_party/artix7_100t/ftdi.cfg"
+          ],
+          "executable": "/home/john/.platformio/packages/tool-openocd/openocd",
+	  "package": "tool-openocd"
+        }
+
+      }
+    }
   },
   "frameworks": [
     "shakti-sdk"
   ],
   "name": "Arty A7-100: Artix-7 FPGA Development Board",
   "upload": {
-    "maximum_ram_size": 134200000,
-    "maximum_size": "-",
-    "flash_size": "128MB",
+"maximum_size":0,
+      "maximum_ram_size": 134217728,
     "speed" : 19200,
     "protocol": "ftdi",
     "protocols": [

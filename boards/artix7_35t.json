@@ -15,18 +15,26 @@
     "mcu": "E-Class"
   },
   "debug": {
-    "onboard_tools": [
-      "ftdi"
-    ],
-  "svd_path": "arty35t.svd"
+    "tools": {
+      "shaktidbg": {
+        "server": {
+          "arguments": [
+            "-f", "/home/john/.platformio/packages/framework-shakti-sdk/bsp/third_party/artix7_35t/ftdi.cfg"
+          ],
+          "executable": "/home/john/.platformio/packages/tool-openocd/openocd",
+          "package": "tool-openocd"
+        }
+
+      }
+    }
   },
   "frameworks": [
     "shakti-sdk"
   ],
   "name": "Artix-7 35T Arty FPGA Evaluation Kit",
   "upload": {
-    "maximun_ramsize":"-",
-    "maximum_size":  131072,
+    "maximum_ram_size": 0,
+    "maximum_size": 131072,
     "speed" : 19200,
     "protocol": "ftdi",
     "protocols": [
