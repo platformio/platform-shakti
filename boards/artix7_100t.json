@@ -19,9 +19,9 @@
       "shaktidbg": {
         "server": {
           "arguments": [
-            "-f", "/home/john/.platformio/packages/framework-shakti-sdk/bsp/third_party/artix7_100t/ftdi.cfg"
+            "-f", "~/.platformio/packages/framework-shakti-sdk/bsp/third_party/artix7_100t/ftdi.cfg"
           ],
-          "executable": "/home/john/.platformio/packages/tool-openocd/openocd",
+          "executable": "~/.platformio/packages/tool-openocd/openocd",
 	  "package": "tool-openocd"
         }
 
