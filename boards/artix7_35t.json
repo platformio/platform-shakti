@@ -25,7 +25,11 @@
   "upload": {
     "maximum_ram_size": 0,
     "maximum_size": 131072,
-    "protocol": "ftdi"
+    "protocol": "ftdi",
+    "protocols":[
+		"ftdi",
+                "jlink"
+                ]
   },
   "url": "https://www.xilinx.com/products/boards-and-kits/arty.html",
   "vendor": "Xilinx"
