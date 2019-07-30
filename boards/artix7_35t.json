@@ -15,7 +15,6 @@
     "mcu": "E-Class"
   },
   "debug": {
-
 	 "onboard_tools": ["ftdi"],
          "svd_path":"arty35t.svd"
   },
@@ -26,12 +25,7 @@
   "upload": {
     "maximum_ram_size": 0,
     "maximum_size": 131072,
-    "speed" : 19200,
-    "protocol": "ftdi",
-    "protocols": [
-      "ftdi",
-      "jlink"
-    ]
+    "protocol": "custom"
   },
   "url": "https://www.xilinx.com/products/boards-and-kits/arty.html",
   "vendor": "Xilinx"
