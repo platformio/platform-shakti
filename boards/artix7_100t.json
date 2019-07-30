@@ -25,7 +25,7 @@
   "upload": {
 	"maximum_size":0,
         "maximum_ram_size": 134217728,
-    "protocol": "custom",
+    "protocol": "custom"
   },
   "url": "https://www.xilinx.com/products/boards-and-kits/1-w51quh.html",
   "vendor": "Xilinx"
