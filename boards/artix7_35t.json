@@ -15,18 +15,9 @@
     "mcu": "E-Class"
   },
   "debug": {
-    "tools": {
-      "shaktidbg": {
-        "server": {
-          "arguments": [
-            "-f", "~/.platformio/packages/framework-shakti-sdk/bsp/third_party/artix7_35t/ftdi.cfg"
-          ],
-          "executable": "~/.platformio/packages/tool-openocd/openocd",
-          "package": "tool-openocd"
-        }
 
-      }
-    }
+	 "onboard_tools": ["ftdi"],
+         "svd_path":"arty35t.svd"
   },
   "frameworks": [
     "shakti-sdk"
