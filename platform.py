@@ -34,8 +34,7 @@ class ShaktiPlatform(PlatformBase):
     def _add_dynamic_options(self, board):
         debug = board.manifest.get("debug", {})
         debug_tools = ("jlink", "ftdi")
-
-        upload_protocol = board.manifest.get("upload", {}).get("protocol")
+        upload_protocol = board.manifest.get("upload", {}).get("protocol")	
         upload_protocols = board.manifest.get("upload", {}).get("protocols", [])
         upload_protocols.extend(debug_tools)
         if upload_protocol and upload_protocol not in upload_protocols:

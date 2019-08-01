@@ -15,21 +15,21 @@
     "mcu": "E-Class"
   },
   "debug": {
-	 "onboard_tools": ["ftdi"],
-         "svd_path":"arty35t.svd"
+    "onboard_tools": ["ftdi"],
+    "svd_path":"arty35t.svd"
   },
   "frameworks": [
     "shakti-sdk"
   ],
   "name": "Artix-7 35T Arty FPGA Evaluation Kit",
   "upload": {
-    "maximum_ram_size": 0,
-    "maximum_size": 131072,
+    "maximum_ram_size": 131072,
+    "maximum_size": 0,
     "protocol": "ftdi",
-    "protocols":[
+    "protocols": [
 		"ftdi",
                 "jlink"
-                ]
+   ]
   },
   "url": "https://www.xilinx.com/products/boards-and-kits/arty.html",
   "vendor": "Xilinx"
