@@ -147,7 +147,11 @@ elif upload_protocol in debug_tools:
     openocd_args.extend(
         debug_tools.get(upload_protocol).get("server").get("arguments", []))
     openocd_args.extend([
+<<<<<<< HEAD
+        "-c", "init; load_image {$SOURCE} %s; shutdown;" %
+=======
         "-c", "program {$SOURCE} %s verify; shutdown;" %
+>>>>>>> c78a381fdb0725d5f15d38a757260a4b5c1f570e
         board_config.get("upload").get("flash_start", "")
     ])
     env.Replace(
