@@ -154,6 +154,7 @@ elif upload_protocol in debug_tools:
         UPLOADER="openocd",
         UPLOADERFLAGS=openocd_args,
         UPLOADCMD="$UPLOADER $UPLOADERFLAGS")
+    upload_target = target_hex
     upload_actions = [env.VerboseAction("$UPLOADCMD", "Uploading $SOURCE")]
 
 # custom upload tool
