@@ -30,7 +30,7 @@
     },
     "framework-shakti-sdk": {
       "type": "framework",
-      "version": "~0.0.190709"
+      "version": "~0.0.190827"
     },
     "tool-openocd-riscv": {
       "optional": true,
