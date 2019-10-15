@@ -1,0 +1,38 @@
+{
+  "build": {
+    "extra_flags": "-D ARTIX7_100T",
+    "f_cpu": "50000000L",
+    "hwids": [
+      [
+        "0x002a",
+        "0x15ba"
+      ]
+    ],
+    "ldscript": "link.ld",
+    "mabi": "lp64",
+    "march": "rv64imac",
+    "mcmodel": "medany",
+    "mcu": "C-Class"
+  },
+  "debug": {
+    "onboard_tools": [
+      "ftdi"
+    ],
+    "svd_path": "arty100t.svd"
+  },
+  "frameworks": [
+    "shakti-sdk"
+  ],
+  "name": "Arty A7-100: Artix-7 FPGA Development Board",
+  "upload": {
+    "maximum_ram_size": 134217728,
+    "maximum_size": 0,
+    "protocol": "ftdi",
+    "protocols": [
+      "ftdi",
+      "jlink"
+    ]
+  },
+  "url": "https://www.xilinx.com/products/boards-and-kits/1-w51quh.html",
+  "vendor": "Xilinx"
+}

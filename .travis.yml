@@ -1,0 +1,25 @@
+language: python
+python:
+  - "2.7"
+  - "3.6"
+
+env:
+  - PLATFORMIO_PROJECT_DIR=examples/shakti-sdk_gpio-keypad
+  - PLATFORMIO_PROJECT_DIR=examples/shakti-sdk_i2c-lm75
+  - PLATFORMIO_PROJECT_DIR=examples/shakti-sdk_uart-hello
+
+install:
+  - pip install -U https://github.com/platformio/platformio/archive/develop.zip
+  - platformio platform install file://.
+
+script:
+  - platformio run -d $PLATFORMIO_PROJECT_DIR
+
+notifications:
+  email: false
+
+  slack:
+    rooms:
+      secure: EfWz/KfPs3PK1KhyZ+hyhHTWqh48TqSzt7X2nJ37oB42dZ97VxRV+ILcHK8NRz4FwO2dr++qKG2UD+tTiq4z8nCeXRfeWW8gUA5C/hNjuHEWq4jJ2ehajDI4b9uSasJdiBV4qo1CqSr3VU71qbhJcMRiorOPi9MN42YZ1hKCbyih9VArPVFA0ua3a4oORvARFDUe3aJW1xAwLFE1M1z1YylbUm55HkucTXV0g1EBn4gI6irIiHyopzo0DJz+NLSYShBO/g0P2EKpbWX9VhKuWFlbHn5IDzU5AQzbd4+3TtrW0uRNDEVeSjaHQwmEPwArukq4qbk9XZWPh7LuGD6NXvYieMjKAQtwFUyJDomIRT+KPrCfvJ96+HzhGJIElHT640vyrBLwL5vpyO8qEBukBqEWjbUaeshIVHZgC22/LrNSq0TnPz54c+ix0Zz1eG2lJU5a70R6Ai8skcZ6M34c/e8YR0ddtgrSI020iNchunbti6rXf5VTnhpgvGjSYV2z109aEjdXFq6hFruixm2tYE/Mcj+6V775+nBKCrZ/MYQ7zDGHAgKNC8OjM51LV4emmc7rVD8W5M0ZD6gjDLWKZMKTkqRV+cJmCL9eY8tsj/bLSfsXWl2MDIS6KtXKZY4SAxZb3Ul75hnl3r+HJ4iFql+N512tE86IdL3ixWqsYqs=
+    on_failure: always
+    on_success: change
