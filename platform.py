@@ -13,7 +13,6 @@
 # limitations under the License.
 
 from os.path import join
-from platform import system
 
 from platformio.managers.platform import PlatformBase
 
@@ -49,7 +48,7 @@ class ShaktiPlatform(PlatformBase):
             server_args = [
                 "-f",
                 join(
-                    self.get_package_dir("framework-shakti-sdk"), "bsp",
+                    self.get_package_dir("framework-shakti-sdk") or "", "bsp",
                     "third_party", board.id, "%s.cfg" % link)
             ]
 
