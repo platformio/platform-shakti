@@ -20,8 +20,7 @@ Open Source Software for Developing on the Shakti Platform
 https://gitlab.com/shaktiproject/software/shakti-sdk
 """
 
-from shutil import copyfile
-from os import makedirs, listdir
+from os import listdir
 from os.path import isdir, join
 
 from SCons.Script import DefaultEnvironment
