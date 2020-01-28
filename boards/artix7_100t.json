@@ -8,11 +8,13 @@
         "0x15ba"
       ]
     ],
-    "ldscript": "link.ld",
     "mabi": "lp64",
     "march": "rv64imac",
     "mcmodel": "medany",
-    "mcu": "C-Class"
+    "mcu": "C-Class",
+    "shakti-sdk":{
+      "ldscript": "link.ld"
+    }
   },
   "debug": {
     "onboard_tools": [
