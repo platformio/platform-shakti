@@ -68,6 +68,9 @@ if not is_valid_target(target):
     print ("Could not find BSP package for %s" % target)
     env.Exit(1)
 
+if not env.BoardConfig().get("build.ldscript", ""):
+    env.Replace(LDSCRIPT_PATH=env.BoardConfig().get("build.shakti-sdk.ldscript", ""))
+
 #
 # Target: Build core BSP libraries
 #
