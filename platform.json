@@ -12,7 +12,7 @@
     "type": "git",
     "url": "https://github.com/platformio/platform-shakti.git"
   },
-  "version": "1.0.1",
+  "version": "1.0.2",
   "packageRepositories": [
     "https://dl.bintray.com/platformio/dl-packages/manifest.json",
     "http://dl.platformio.org/packages/manifest.json"
@@ -20,7 +20,10 @@
   "frameworks": {
     "shakti-sdk": {
       "package": "framework-shakti-sdk",
-      "script": "builder/frameworks/shakti-sdk.py"
+      "script": "builder/frameworks/shakti-sdk.py",
+      "description": "A software development kit for developing applications on Shakti class of processors",
+      "url": "https://gitlab.com/shaktiproject/software/shakti-sdk",
+      "title": "Shakti SDK"
     }
   },
   "packages": {
