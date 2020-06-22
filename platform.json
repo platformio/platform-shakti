@@ -2,8 +2,7 @@
   "name": "shakti",
   "title": "Shakti",
   "description": "Shakti is an open-source initiative by the RISE group at IIT-Madras, which is not only building open source, production grade processors, but also associated components like interconnect fabrics, verification tools, storage controllers, peripheral IPs and SOC tools.",
-  "url": "https://shakti.org.in/",
-  "homepage": "http://platformio.org/platforms/shakti",
+  "homepage": "https://shakti.org.in/",
   "license": "Apache-2.0",
   "engines": {
     "platformio": "<5"
