@@ -21,7 +21,7 @@
       "package": "framework-shakti-sdk",
       "script": "builder/frameworks/shakti-sdk.py",
       "description": "A software development kit for developing applications on Shakti class of processors",
-      "url": "https://gitlab.com/shaktiproject/software/shakti-sdk",
+      "homepage": "https://gitlab.com/shaktiproject/software/shakti-sdk",
       "title": "Shakti SDK"
     }
   },
