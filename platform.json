@@ -33,25 +33,30 @@
   "packages": {
     "toolchain-riscv": {
       "type": "toolchain",
+      "owner": "platformio",
       "version": "~1.80200.0"
     },
     "framework-shakti-sdk": {
       "type": "framework",
+      "owner": "platformio",
       "version": "~0.0.190827"
     },
     "tool-openocd-riscv": {
       "optional": true,
       "type": "uploader",
+      "owner": "platformio",
       "version": "~2.1000.0"
     },
     "tool-jlink": {
       "type": "uploader",
       "optional": true,
+      "owner": "platformio",
       "version": "^1.63208.0"
     },
     "tool-qemu-riscv": {
       "type": "debugger",
       "optional": true,
+      "owner": "platformio",
       "version": "~1.30100.0"
     }
   }
