@@ -10,17 +10,13 @@
       "RISC-V"
   ],
   "engines": {
-    "platformio": "<5"
+    "platformio": "^5"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/platformio/platform-shakti.git"
   },
   "version": "1.0.2",
-  "packageRepositories": [
-    "https://dl.bintray.com/platformio/dl-packages/manifest.json",
-    "http://dl.platformio.org/packages/manifest.json"
-  ],
   "frameworks": {
     "shakti-sdk": {
       "package": "framework-shakti-sdk",
