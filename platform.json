@@ -35,7 +35,7 @@
     "framework-shakti-sdk": {
       "type": "framework",
       "owner": "platformio",
-      "version": "0.0.0-alpha.e583695bfe"
+      "version": "0.0.0-alpha+e583695bfe"
     },
     "tool-openocd-riscv": {
       "optional": true,
