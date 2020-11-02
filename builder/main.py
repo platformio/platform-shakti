@@ -35,7 +35,7 @@ env.Replace(
     RANLIB="riscv64-unknown-elf-gcc-ranlib",
     SIZETOOL="riscv64-unknown-elf-size",
 
-    ARFLAGS=["rc"],
+    ARFLAGS=["rcs"],
 
     SIZEPRINTCMD='$SIZETOOL -d $SOURCES',
 
@@ -147,7 +147,7 @@ elif upload_protocol in debug_tools:
     openocd_args.extend(
         debug_tools.get(upload_protocol).get("server").get("arguments", []))
     openocd_args.extend([
-        "-c", "init; load_image {$SOURCE} %s; shutdown;" %
+        "-c", "init; load_image {$SOURCE} %s;resume 0x80000000;shutdown" %
         board_config.get("upload").get("flash_start", "")
     ])
     env.Replace(

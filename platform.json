@@ -30,12 +30,12 @@
     "toolchain-riscv": {
       "type": "toolchain",
       "owner": "platformio",
-      "version": "~1.80200.0"
+      "version": "~1.80300.0"
     },
     "framework-shakti-sdk": {
       "type": "framework",
       "owner": "platformio",
-      "version": "~0.0.190827"
+      "version": "0.0.0-alpha.e583695bfe"
     },
     "tool-openocd-riscv": {
       "optional": true,
