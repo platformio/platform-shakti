@@ -13,6 +13,7 @@ jobs:
           - "examples/shakti-sdk_gpio-keypad"
           - "examples/shakti-sdk_i2c-lm75"
           - "examples/shakti-sdk_uart-hello"
+          - "examples/shakti-sdk_weatherstation"
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
