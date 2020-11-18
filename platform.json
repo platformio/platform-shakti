@@ -16,7 +16,7 @@
     "type": "git",
     "url": "https://github.com/platformio/platform-shakti.git"
   },
-  "version": "1.0.2",
+  "version": "1.1.0",
   "frameworks": {
     "shakti-sdk": {
       "package": "framework-shakti-sdk",
