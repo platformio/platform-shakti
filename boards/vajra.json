@@ -1,0 +1,40 @@
+{
+  "build": {
+    "extra_flags": "-D vajra",
+    "f_cpu": "50000000L",
+    "hwids": [
+      [
+        "0x002a",
+        "0x15ba"
+      ]
+    ],
+    "mabi": "lp64",
+    "march": "rv64imac",
+    "mcmodel": "medany",
+    "mcu": "C-Class",
+    "shakti-sdk":{
+      "ldscript": "link.ld"
+    }
+  },
+  "debug": {
+    "onboard_tools": [
+      "ftdi"
+    ],
+    "svd_path": "vajra.svd"
+  },
+  "frameworks": [
+    "shakti-sdk"
+  ],
+  "name": "Vajra on Arty A7-100: Artix-7 FPGA Development Board",
+  "upload": {
+    "maximum_ram_size": 134217728,
+    "maximum_size": 0,
+    "protocol": "ftdi",
+    "protocols": [
+      "ftdi",
+      "jlink"
+    ]
+  },
+  "url": "https://www.xilinx.com/products/boards-and-kits/1-w51quh.html",
+  "vendor": "Xilinx"
+}

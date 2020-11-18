@@ -2,52 +2,57 @@
   "name": "shakti",
   "title": "Shakti",
   "description": "Shakti is an open-source initiative by the RISE group at IIT-Madras, which is not only building open source, production grade processors, but also associated components like interconnect fabrics, verification tools, storage controllers, peripheral IPs and SOC tools.",
-  "url": "https://shakti.org.in/",
-  "homepage": "http://platformio.org/platforms/shakti",
+  "homepage": "https://shakti.org.in/",
   "license": "Apache-2.0",
+  "keywords": [
+      "dev-platform",
+      "Shakti",
+      "RISC-V"
+  ],
   "engines": {
-    "platformio": "<5"
+    "platformio": "^5"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/platformio/platform-shakti.git"
   },
-  "version": "1.0.2",
-  "packageRepositories": [
-    "https://dl.bintray.com/platformio/dl-packages/manifest.json",
-    "http://dl.platformio.org/packages/manifest.json"
-  ],
+  "version": "1.1.0",
   "frameworks": {
     "shakti-sdk": {
       "package": "framework-shakti-sdk",
       "script": "builder/frameworks/shakti-sdk.py",
       "description": "A software development kit for developing applications on Shakti class of processors",
-      "url": "https://gitlab.com/shaktiproject/software/shakti-sdk",
+      "homepage": "https://gitlab.com/shaktiproject/software/shakti-sdk",
       "title": "Shakti SDK"
     }
   },
   "packages": {
     "toolchain-riscv": {
       "type": "toolchain",
-      "version": "~1.80200.0"
+      "owner": "platformio",
+      "version": "~1.80300.0"
     },
     "framework-shakti-sdk": {
       "type": "framework",
-      "version": "~0.0.190827"
+      "owner": "platformio",
+      "version": "0.0.0-alpha+sha.5880320115"
     },
     "tool-openocd-riscv": {
       "optional": true,
       "type": "uploader",
+      "owner": "platformio",
       "version": "~2.1000.0"
     },
     "tool-jlink": {
       "type": "uploader",
       "optional": true,
+      "owner": "platformio",
       "version": "^1.63208.0"
     },
     "tool-qemu-riscv": {
       "type": "debugger",
       "optional": true,
+      "owner": "platformio",
       "version": "~1.30100.0"
     }
   }

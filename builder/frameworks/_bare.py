@@ -37,7 +37,7 @@ env.Append(
         "-mcmodel=%s" % board_config.get("build.mcmodel")
     ],
 
-    LIBS=["c", "m", "gcc"]
+    LIBS=["m", "gcc"]
 )
 
 # copy CCFLAGS to ASFLAGS (-x assembler-with-cpp mode)

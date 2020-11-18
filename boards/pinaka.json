@@ -1,0 +1,40 @@
+{
+  "build": {
+    "extra_flags": "-D pinaka",
+    "f_cpu": "50000000L",
+    "hwids": [
+      [
+        "0x002a",
+        "0x15ba"
+      ]
+    ],
+    "mabi": "ilp32",
+    "march": "rv32imac",
+    "mcmodel": "medany",
+    "mcu": "E-Class",
+    "shakti-sdk":{
+      "ldscript": "link.ld"
+    }
+  },
+  "debug": {
+    "onboard_tools": [
+      "ftdi"
+    ],
+    "svd_path": "pinaka.svd"
+  },
+  "frameworks": [
+    "shakti-sdk"
+  ],
+  "name": "Pinaka on Artix-7 35T Arty FPGA Evaluation Kit",
+  "upload": {
+    "maximum_ram_size": 131072,
+    "maximum_size": 0,
+    "protocol": "ftdi",
+    "protocols": [
+      "ftdi",
+      "jlink"
+    ]
+  },
+  "url": "https://www.xilinx.com/products/boards-and-kits/arty.html",
+  "vendor": "Xilinx"
+}

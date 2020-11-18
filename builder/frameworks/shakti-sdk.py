@@ -42,15 +42,16 @@ target = env.subst("$BOARD")
 
 env.Append(
     ASFLAGS=[
-        ("-D__ASSEMBLY__=1")
+        ("-D__ASSEMBLY__=1"),
+        "-fno-common"
     ],
 
     CFLAGS=[
+        "-static",
         "-std=gnu99"
     ],
 
     CCFLAGS=[
-        "-fno-common",
         "-fno-builtin-printf"
     ],
 
@@ -61,7 +62,11 @@ env.Append(
 
     LIBPATH=[
         join(FRAMEWORK_DIR, "bsp", "third_party", target)
-    ]
+    ],
+
+    LINKFLAGS=[
+        "-static"
+    ],
 )
 
 if not is_valid_target(target):
@@ -75,14 +80,9 @@ if not env.BoardConfig().get("build.ldscript", ""):
 # Target: Build core BSP libraries
 #
 
-unsupported_drivers = ("plic", "timer")
-
 libs = []
 
 for driver in listdir(join(FRAMEWORK_DIR, "bsp", "drivers")):
-    if driver in unsupported_drivers:
-        continue
-
     libs.append(
         env.BuildLibrary(
             join("$BUILD_DIR", "bsp", "drivers", driver),
@@ -91,14 +91,16 @@ for driver in listdir(join(FRAMEWORK_DIR, "bsp", "drivers")):
 
 libs.append(
     env.BuildLibrary(
-        join("$BUILD_DIR", "bsp", "libwrap"),
-        join(FRAMEWORK_DIR, "bsp", "libwrap"))
+        join("$BUILD_DIR", "bsp", "core"),
+        join(FRAMEWORK_DIR, "bsp", "core")
+    )
 )
 
 libs.append(
     env.BuildLibrary(
-        join("$BUILD_DIR", "bsp", "include"),
-        join(FRAMEWORK_DIR, "bsp", "include"))
+        join("$BUILD_DIR", "bsp", "libs"),
+        join(FRAMEWORK_DIR, "bsp", "libs")
+    )
 )
 
 libs.append(
