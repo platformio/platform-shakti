@@ -131,7 +131,8 @@ if upload_protocol.startswith("jlink"):
             "-speed", "1000",
             "-if", "JTAG",
             "-jtagconf", "-1,-1",
-            "-autoconnect", "1"
+            "-autoconnect", "1",
+            "-NoGui", "1"
         ],
         UPLOADCMD='$UPLOADER $UPLOADERFLAGS -CommanderScript "${__jlink_cmd_script(__env__, SOURCE)}"'
     )
