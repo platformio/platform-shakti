@@ -1,4 +1,4 @@
-# Shakti: development platform for [PlatformIO](http://platformio.org)
+# Shakti: development platform for [PlatformIO](https://platformio.org)
 
 [![Build Status](https://github.com/platformio/platform-shakti/workflows/Examples/badge.svg)](https://github.com/platformio/platform-shakti/actions)
 
@@ -9,7 +9,7 @@ Shakti is an open-source initiative by the RISE group at IIT-Madras, which is no
 
 # Usage
 
-1. [Install PlatformIO](http://platformio.org)
+1. [Install PlatformIO](https://platformio.org)
 2. Create PlatformIO project and configure a platform option in [platformio.ini](https://docs.platformio.org/page/projectconf.html) file:
 
 ## Stable version
