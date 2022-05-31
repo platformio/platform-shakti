@@ -41,7 +41,7 @@ env.SConscript("_bare.py", exports="env")
 target = env.subst("$BOARD")
 
 env.Append(
-    ASFLAGS=[
+    ASPPFLAGS=[
         ("-D__ASSEMBLY__=1"),
         "-fno-common"
     ],
